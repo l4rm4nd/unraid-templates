@@ -1,0 +1,41 @@
+
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>MemeLord</Name>
+  <Repository>ghcr.io/l4rm4nd/memelord:1.0.x</Repository>
+  <Registry>https://github.com/l4rm4nd/MemeLord/pkgs/container/memelord</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/l4rm4nd/MemeLord</Project>
+  <Overview>A Python Django Meme Image Board.&#xD;
+&#xD;
+Supports file uploads, tagging, commenting and OIDC SSO.&#xD;
+&#xD;
+Once the container is up and running, you can access the web portal at `http://YOUR-IP:8000`.&#xD;
+&#xD;
+The default username is admin. The default password is auto-generated and displayed in container logs.&#xD;
+&#xD;
+Installation Instructions:&#xD;
+https://github.com/l4rm4nd/MemeLord/wiki/01-%E2%80%90-Installation#unraid-installation&#xD;
+&#xD;
+</Overview>
+  <Category>Productivity: Tools:Utilities</Category>
+  <WebUI>http://[IP]:[PORT:8000]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/l4rm4nd/unraid-templates/refs/heads/main/memelord/memelord.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/l4rm4nd/MemeLord/main/myapp/static/assets/img/logo.png</Icon>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1722806126</DateInstalled>
+  <DonateText>If you like this project, please feel free to donate.</DonateText>
+  <DonateLink>https://github.com/sponsors/l4rm4nd</DonateLink>
+  <Config Name="DOMAIN" Target="DOMAIN" Default="" Mode="" Description="Defines the FQDN or IP address on which you plan to access the MemeLord container." Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="PORT" Target="8000" Default="8000" Mode="tcp" Description="Defines the Docker port mapping." Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+  <Config Name="SECURE_COOKIES" Target="SECURE_COOKIES" Default="False" Mode="" Description="Set to `True` if you use a reverse proxy with TLS" Type="Variable" Display="always" Required="true" Mask="false">False</Config>
+  <Config Name="DB BIND MOUNT DIR" Target="/opt/app/database" Default="" Mode="rw" Description="Defines the Docker bind mount volume for persisted database data. Assign proper read+write permissions for the `www-data` user (UID: 33, GID: 33) or execute `chmod -R 777 /mnt/user/appdata/memelord/*` via Unraid terminal shell as root." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/memelord/db</Config>
+  <Config Name="MEDIA BIND MOUNT DIR" Target="/opt/app/media" Default="" Mode="rw" Description="Defines the Docker bind mount volume for persisted media data. Assign proper read+write permissions for the `www-data` user (UID: 33, GID: 33) or execute `chmod -R 777 /mnt/user/appdata/memelord/*` via Unraid terminal shell as root." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/memelord/media</Config>      
+  <Config Name="TZ" Target="TZ" Default="Europe/Berlin" Mode="" Description="Defines the timezone to use" Type="Variable" Display="always" Required="false" Mask="false">Europe/Berlin</Config>
+</Container>
