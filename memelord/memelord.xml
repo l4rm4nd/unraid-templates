@@ -2,7 +2,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>MemeLord</Name>
-  <Repository>ghcr.io/l4rm4nd/memelord:1.4.x</Repository>
+  <Repository>ghcr.io/l4rm4nd/memelord:1.5.x</Repository>
   <Registry>https://github.com/l4rm4nd/MemeLord/pkgs/container/memelord</Registry>
   <Network>bridge</Network>
   <MyIP/>
